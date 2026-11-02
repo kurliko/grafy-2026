@@ -1,0 +1,23 @@
+Przykłady wywołań, zestaw 1
+(z głównego folderu repo, po source .venv/bin/activate)
+
+python -m zestaw_1.zadanie_1 macierz "[[0,1,1],[1,0,1],[1,1,0]]"
+    -> lista sąsiedztwa, macierz sąsiedztwa, macierz incydencji i rysunek
+
+python -m zestaw_1.zadanie_1 incydencja "[[1,1,0],[1,0,1],[0,1,1]]"
+    -> to samo, graf podany jako macierz incydencji
+
+python -m zestaw_1.zadanie_1 lista "[[1,2],[0,2],[0,1]]"
+    -> to samo, graf podany jako lista sąsiedztwa
+
+python -m zestaw_1.zadanie_1 macierz zestaw_1/dane/macierz.txt
+    -> to samo, graf wczytany z pliku (też: incydencja, lista)
+
+python -m zestaw_1.zadanie_2 lista "[[1,2],[0,2],[0,1]]"
+    -> tylko rysunek grafu na okręgu
+
+python -m zestaw_1.zadanie_3 gnl 6 7
+    -> losowy graf: 6 wierzchołków, 7 krawędzi; lista sąsiedztwa i rysunek
+
+python -m zestaw_1.zadanie_3 gnp 6 0.5
+    -> losowy graf: 6 wierzchołków, każda krawędź z p = 0.5; lista sąsiedztwa i rysunek
