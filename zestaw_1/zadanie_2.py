@@ -9,23 +9,18 @@ from zestaw_1.wczytywanie import read_graph
 def circle_positions(n):
     positions = []
     for i in range(n):
-        # pełny okrąg dzielimy na n równych kątów
         angle = 2 * math.pi * i / n
-        # kąt -> współrzędne (x, y)
         positions.append((math.cos(angle), math.sin(angle)))
     return positions
 
 
-# rysuje graf g: krawędzie jako odcinki, wierzchołki jako kółka z numerem
 def draw_graph(g):
     positions = circle_positions(len(g.adjacency_list))
     fig, ax = plt.subplots()
 
     for u in range(len(g.adjacency_list)):
         for v in g.adjacency_list[u]:
-            # u < v: każda krawędź raz
             if u < v:
-                # odcinek między pozycjami sąsiadów
                 x_u, y_u = positions[u]
                 x_v, y_v = positions[v]
                 ax.plot([x_u, x_v], [y_u, y_v], color="black", zorder=1)

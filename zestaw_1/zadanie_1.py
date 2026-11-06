@@ -11,7 +11,6 @@ from zestaw_1.zadanie_2 import draw_graph
 def main():
     g = read_graph()
 
-    # ten sam graf w trzech kodowaniach
     print("Lista sąsiedztwa:")
     for u in range(len(g.adjacency_list)):
         print(f"{u}: {g.adjacency_list[u]}")

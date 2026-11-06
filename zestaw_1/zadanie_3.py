@@ -7,7 +7,6 @@ from zestaw_1.graph import Graph
 from zestaw_1.zadanie_2 import draw_graph
 
 
-# wszystkie możliwe krawędzie: pary u < v
 def possible_edges(n):
     if n < 0:
         raise ValueError("n nie może być ujemne")
@@ -62,7 +61,6 @@ def main():
 
     try:
         n = int(sys.argv[2])
-        # l dla gnl, p dla gnp
         if model == "gnl":
             g = random_gnl(n, int(sys.argv[3]))
         else:

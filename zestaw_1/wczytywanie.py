@@ -18,7 +18,6 @@ def read_matrix_file(path):
 
 
 # plik z listą sąsiedztwa -> lista list
-# wiersz: numer wierzchołka z kropką i jego sąsiedzi, np. "0. 1 4 5"
 def read_list_file(path):
     adjacency_list = []
     with open(path, encoding="utf-8") as file:
@@ -37,7 +36,6 @@ def read_list_file(path):
     return adjacency_list
 
 
-# graf w cudzysłowie albo ścieżka do pliku -> lista list
 def read_data(encoding, source):
     if source.startswith("["):
         return json.loads(source)

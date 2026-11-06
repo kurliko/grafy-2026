@@ -1,9 +1,9 @@
 class Graph:
     """Graf prosty o wierzchołkach 0..n-1, trzymany jako lista sąsiedztwa."""
 
-    # tworzy graf z gotowej listy sąsiedztwa
+
     def __init__(self, adjacency_list):
-        # lista[u] = sąsiedzi wierzchołka u
+       
         self.adjacency_list = adjacency_list
 
     # macierz sąsiedztwa -> lista
@@ -15,7 +15,6 @@ class Graph:
             adjacency_list.append([])
         for u in range(n):
             for v in range(n):
-                # jedynka: v jest sąsiadem u
                 if matrix[u][v] == 1:
                     adjacency_list[u].append(v)
         return Graph(adjacency_list)
@@ -23,12 +22,10 @@ class Graph:
     # lista -> macierz sąsiedztwa
     def to_adjacency_matrix(self):
         n = len(self.adjacency_list)
-        # n wierszy po n zer
         matrix = []
         for _ in range(n):
             matrix.append([0] * n)
         for u in range(n):
-            # krawędź jest na liście dwa razy, więc macierz wychodzi symetryczna
             for v in self.adjacency_list[u]:
                 matrix[u][v] = 1
         return matrix
@@ -41,9 +38,7 @@ class Graph:
         adjacency_list = []
         for _ in range(n):
             adjacency_list.append([])
-        # kolumna = jedna krawędź
         for j in range(m):
-            # końce krawędzi: dwa wiersze z jedynką
             ends = []
             for i in range(n):
                 if matrix[i][j] == 1:
@@ -52,7 +47,6 @@ class Graph:
             v = ends[1]
             adjacency_list[u].append(v)
             adjacency_list[v].append(u)
-        # kolumny mogą być w dowolnej kolejności
         for neighbors in adjacency_list:
             neighbors.sort()
         return Graph(adjacency_list)
@@ -63,14 +57,11 @@ class Graph:
         edges = []
         for u in range(n):
             for v in self.adjacency_list[u]:
-                # u < v: każda krawędź raz
                 if u < v:
                     edges.append((u, v))
-        # wiersze = wierzchołki, kolumny = krawędzie
         matrix = []
         for _ in range(n):
             matrix.append([0] * len(edges))
-        # każda krawędź dostaje kolejną kolumnę, o numerze j
         j = 0
         for edge in edges:
             u = edge[0]
