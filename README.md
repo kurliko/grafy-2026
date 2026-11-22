@@ -48,6 +48,19 @@ Program wypisuje listę sąsiedztwa i rysuje wylosowany graf.
 - `zestaw_1/graph.py`: klasa `Graph` trzyma graf jako listę sąsiedztwa w polu `adjacency_list`.
 - Tworzenie grafu: `Graph(lista)`, `Graph.from_adjacency_matrix(macierz)` i `Graph.from_incidence_matrix(macierz)`.
 - Zamiana na macierze: `g.to_adjacency_matrix()` i `g.to_incidence_matrix()`. Obie zwracają zwykłe listy list, bez numpy.
-- `zestaw_1/wczytywanie.py`: funkcja `read_graph()` czyta z terminala kodowanie i graf (w cudzysłowie albo z pliku) i zwraca `Graph`. Używają jej zadania 1 i 2.
+- `zestaw_1/wczytywanie.py`: funkcja `read_graph()` czyta z terminala kodowanie i graf (w cudzysłowie albo z pliku) i zwraca `Graph`. Używają jej zadania 1 i 2 z zestawu 1 oraz 3 i 6 z zestawu 2.
+
+## Zestaw 2
+
+Przykłady wywołań z krótkim opisem wyniku są w `zestaw_2/przyklady_wywolan.txt`.
+
+- Zadanie 1: ciąg liczb jako argumenty; odpowiedź, czy jest graficzny, a jeśli tak, to zbudowany graf.
+- Zadanie 2: liczba randomizacji i ciąg graficzny; graf przed i po randomizacji.
+- Zadanie 3: graf jak w zestawie 1; spójne składowe i numer największej.
+- Zadanie 4: liczba wierzchołków albo nic; losowy graf eulerowski i jego cykl Eulera.
+- Zadanie 5: liczba wierzchołków `n` i stopień `k`; losowy graf `k`-regularny.
+- Zadanie 6: graf jak w zestawie 1; czy jest hamiltonowski, a jeśli tak, to cykl Hamiltona.
+
+Każdy program na końcu rysuje graf i kończy się po zamknięciu okna.
 
 

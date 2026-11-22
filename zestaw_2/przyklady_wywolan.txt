@@ -1,0 +1,44 @@
+Przykłady wywołań, zestaw 2
+Zadania 3 i 6 przyjmują graf tak samo jak zestaw 1: macierz, incydencja albo lista, w cudzysłowie albo z pliku.
+
+python -m zestaw_2.zadanie_1 4 2 2 3 2 1 4 2 2 2 2
+    -> "Ciąg jest graficzny.", lista sąsiedztwa zbudowanego grafu i rysunek
+
+python -m zestaw_2.zadanie_1 4 4 3 1 2
+    -> "Ciąg nie jest graficzny."
+
+python -m zestaw_2.zadanie_2 10 4 2 2 3 2 1 4 2 2 2 2
+    -> graf z ciągu przed i po 10 randomizacjach
+
+python -m zestaw_2.zadanie_3 lista "[[2,3,4,5],[1,3,4],[1,2,5],[1,2],[1,3],[7],[6]]"
+    -> spójne składowe "1) 1 2 3 4 5", "2) 6 7"
+
+python -m zestaw_2.zadanie_4 8
+    -> losowy graf eulerowski o 8 wierzchołkach, jego stopnie, lista sąsiedztwa, cykl Eulera i rysunek
+
+python -m zestaw_2.zadanie_4
+    -> to samo, ale liczba wierzchołków też jest losowana
+
+python -m zestaw_2.zadanie_5 7 2
+    -> losowy graf 2-regularny o 7 wierzchołkach: lista sąsiedztwa i rysunek
+
+python -m zestaw_2.zadanie_6 lista "[[3,5,6],[4,5,6],[1,5],[2,5],[1,2,3,4],[1,2]]"
+    -> "Graf jest hamiltonowski.", cykl Hamiltona i rysunek
+
+python -m zestaw_2.zadanie_6 lista "[[2,4,5],[1,3,5,6],[2,4,7],[1,3,6,7],[1,2,8],[2,4,8],[3,4,8],[5,6,7]]"
+    -> "Graf jest hamiltonowski.", cykl Hamiltona i rysunek
+
+python -m zestaw_2.zadanie_6 lista "[[2,3,4],[1],[1],[1]]"
+    -> "Graf nie jest hamiltonowski." i rysunek
+
+Graf z pliku:
+
+python -m zestaw_2.zadanie_3 lista zestaw_2/dane/lista.txt
+python -m zestaw_2.zadanie_3 macierz zestaw_2/dane/macierz.txt
+python -m zestaw_2.zadanie_3 incydencja zestaw_2/dane/incydencja.txt
+    -> za każdym razem "1) 1 2 3 4 5", "2) 6 7", numer największej i rysunek
+
+python -m zestaw_2.zadanie_6 lista zestaw_2/dane/lista.txt
+python -m zestaw_2.zadanie_6 macierz zestaw_2/dane/macierz.txt
+python -m zestaw_2.zadanie_6 incydencja zestaw_2/dane/incydencja.txt
+    -> za każdym razem "Graf nie jest hamiltonowski." (graf jest niespójny) i rysunek
