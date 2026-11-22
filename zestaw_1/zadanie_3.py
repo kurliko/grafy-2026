@@ -4,6 +4,7 @@ import sys
 import matplotlib.pyplot as plt
 
 from zestaw_1.graph import Graph
+from zestaw_1.wypisywanie import print_adjacency_list
 from zestaw_1.zadanie_2 import draw_graph
 
 
@@ -69,8 +70,7 @@ def main():
         sys.exit(str(error))
 
     print("Lista sąsiedztwa:")
-    for u in range(len(g.adjacency_list)):
-        print(f"{u}: {g.adjacency_list[u]}")
+    print_adjacency_list(g)
     draw_graph(g)
     plt.show()
 

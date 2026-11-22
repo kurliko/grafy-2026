@@ -17,7 +17,7 @@ def read_matrix_file(path):
     return matrix
 
 
-# plik z listą sąsiedztwa -> lista list
+# plik z listą sąsiedztwa -> lista list (numery tak jak w pliku, od 1)
 def read_list_file(path):
     adjacency_list = []
     with open(path, encoding="utf-8") as file:
@@ -26,14 +26,28 @@ def read_list_file(path):
                 continue
             words = line.split()
             vertex = words[0]
-            expected = f"{len(adjacency_list)}."
+            expected = f"{len(adjacency_list) + 1}."
             if vertex != expected:
-                raise ValueError(f"w pliku {path} oczekiwano numeru {expected}, a jest {vertex} (numeracja od 0)")
+                raise ValueError(f"w pliku {path} oczekiwano numeru {expected}, a jest {vertex} (numeracja od 1)")
             neighbors = []
             for word in words[1:]:
                 neighbors.append(int(word))
             adjacency_list.append(neighbors)
     return adjacency_list
+
+
+# lista sąsiedztwa z numeracją od 1 (jak na wejściu) -> numeracja od 0 (jak w programie)
+def list_from_one_based(adjacency_list):
+    n = len(adjacency_list)
+    result = []
+    for neighbors in adjacency_list:
+        shifted = []
+        for v in neighbors:
+            if v < 1 or v > n:
+                raise ValueError(f"wierzchołek {v} spoza zakresu 1..{n} (numeracja od 1)")
+            shifted.append(v - 1)
+        result.append(shifted)
+    return result
 
 
 def read_data(encoding, source):
@@ -57,6 +71,9 @@ def read_graph():
 
     try:
         data = read_data(encoding, source)
+        # lista: numery od 1 na wejściu -> od 0 w programie
+        if encoding == "lista":
+            data = list_from_one_based(data)
     except (OSError, ValueError) as error:
         sys.exit(str(error))
 

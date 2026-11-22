@@ -1,19 +1,19 @@
 import matplotlib.pyplot as plt
 
 from zestaw_1.wczytywanie import read_graph
+from zestaw_1.wypisywanie import print_adjacency_list
 from zestaw_1.zadanie_2 import draw_graph
 
 
 # wczytuje graf, wypisuje go w trzech kodowaniach i pokazuje w oknie
-# np. python -m zestaw_1.zadanie_1 lista "[[1],[0]]"
+# np. python -m zestaw_1.zadanie_1 lista "[[2],[1]]"
 # albo python -m zestaw_1.zadanie_1 macierz zestaw_1/dane/macierz.txt
 # kodowanie: macierz, incydencja albo lista
 def main():
     g = read_graph()
 
     print("Lista sąsiedztwa:")
-    for u in range(len(g.adjacency_list)):
-        print(f"{u}: {g.adjacency_list[u]}")
+    print_adjacency_list(g)
     print("Macierz sąsiedztwa:")
     for row in g.to_adjacency_matrix():
         print(row)

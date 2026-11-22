@@ -22,7 +22,7 @@ Programy uruchamiamy jako moduły:
 
     python -m zestaw_1.zadanie_3
 
-Polecenia uruchamiamy z głównego folderu repo. Wierzchołki są numerowane od 0. Graf podajemy w cudzysłowie, a jego format musi pasować do wybranego kodowania. Programy nie sprawdzają poprawności grafu, więc każdą krawędź trzeba zapisać zgodnie z kodowaniem. Błędne polecenie (zła liczba argumentów, nieznane kodowanie, brak pliku) kończy się krótkim komunikatem.
+Polecenia uruchamiamy z głównego folderu repo. Wierzchołki na wejściu i na wyjściu są numerowane od 1, tak jak w przykładach prowadzącej, a w środku programu od 0. Graf podajemy w cudzysłowie, a jego format musi pasować do wybranego kodowania. Programy nie sprawdzają poprawności grafu, więc każdą krawędź trzeba zapisać zgodnie z kodowaniem. Błędne polecenie (zła liczba argumentów, nieznane kodowanie, brak pliku) kończy się krótkim komunikatem.
 
 ## Zestaw 1
 
