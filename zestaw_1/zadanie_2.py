@@ -28,7 +28,8 @@ def draw_graph(g):
     for i in range(len(positions)):
         x, y = positions[i]
         ax.scatter(x, y, s=500, color="white", edgecolors="black", zorder=2)
-        ax.text(x, y, str(i), ha="center", va="center", zorder=3)
+        # na rysunku numeracja od 1
+        ax.text(x, y, str(i + 1), ha="center", va="center", zorder=3)
 
     ax.set_aspect("equal")
     ax.margins(0.15)
@@ -37,7 +38,7 @@ def draw_graph(g):
 
 
 # wczytuje graf i pokazuje go w oknie
-# np. python -m zestaw_1.zadanie_2 lista "[[1],[0]]"
+# np. python -m zestaw_1.zadanie_2 lista "[[2],[1]]"
 # kodowanie: macierz, incydencja albo lista
 def main():
     g = read_graph()
