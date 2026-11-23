@@ -1,0 +1,35 @@
+Przykłady wywołań, zestaw 3
+(z głównego folderu repo, po source .venv/bin/activate; wierzchołki numerujemy od 1)
+Każde uruchomienie losuje nowy spójny graf z wagami 1..10. Argumenty: n = liczba wierzchołków,
+l = liczba krawędzi (co najmniej n - 1).
+
+python -m zestaw_3.zadanie_1 12 19
+    -> losowy spójny graf: lista sąsiedztwa z wagami (sąsiad(waga)) i rysunek
+
+python -m zestaw_3.zadanie_2 12 19
+    -> graf i najkrótsze ścieżki Dijkstry od wierzchołka 1 (domyślny start) z długościami
+
+python -m zestaw_3.zadanie_2 12 19 5
+    -> to samo, ale wierzchołek startowy s = 5
+
+python -m zestaw_3.zadanie_3 12 19
+    -> graf i macierz odległości między wszystkimi parami wierzchołków
+
+python -m zestaw_3.zadanie_4 12 19
+    -> graf, macierz odległości, centrum (najmniejsza suma odległości)
+       i centrum minimax (najmniejsza odległość do najdalszego wierzchołka)
+
+python -m zestaw_3.zadanie_5 12 19
+    -> minimalne drzewo rozpinające (Prim): lista krawędzi, waga drzewa
+       i rysunek (krawędzie drzewa na niebiesko)
+
+python -m zestaw_3.wszystko 12 19
+    -> wszystkie zadania na jednym grafie: graf, Dijkstra od 1, macierz odległości,
+       centra, minimalne drzewo rozpinające oraz dwa rysunki
+
+python -m zestaw_3.wszystko 12 19 3
+    -> to samo, ale Dijkstra od wierzchołka 3
+
+python -m zestaw_3.wszystko 30 29
+    -> bardzo mało krawędzi (drzewo): losowanie może potrwać dłużej, a przy braku
+       spójnego grafu program kończy się komunikatem (wtedy podaj większe l)
