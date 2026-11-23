@@ -1,0 +1,43 @@
+Przykłady wywołań, zestaw 4
+(z głównego folderu repo, po source .venv/bin/activate; wierzchołki numerujemy od 1)
+Argumenty losowania: n = liczba wierzchołków, p = prawdopodobieństwo łuku (od 0 do 1).
+Zadania 3 i 4 losują digraf do skutku, aż jest silnie spójny (zadanie 2); dla małego p
+może to się nie udać, wtedy program kończy się komunikatem (podaj większe p, np. 0.4).
+Wagi łuków są z przedziału [-5, 10], bez cykli o ujemnej wadze.
+
+python -m zestaw_4.zadanie_1 gnp 7 0.3
+    -> losowy digraf G(n, p): lista sąsiedztwa, macierz sąsiedztwa, macierz incydencji i rysunek
+
+python -m zestaw_4.zadanie_1 lista "[[2,3],[1],[]]"
+    -> digraf podany jako lista sąsiedztwa (łuki 1->2, 1->3, 2->1), w trzech kodowaniach i rysunek
+
+python -m zestaw_4.zadanie_1 macierz "[[0,1,0],[0,0,1],[1,0,0]]"
+    -> digraf podany jako macierz sąsiedztwa (cykl 1->2->3->1)
+
+python -m zestaw_4.zadanie_1 incydencja "[[-1,0,1],[1,-1,0],[0,1,-1]]"
+    -> digraf podany jako macierz incydencji (-1: początek łuku, 1: koniec łuku)
+
+python -m zestaw_4.zadanie_1 macierz zestaw_4/dane/macierz.txt
+    -> digraf z rys. 1 z przykładowego wejścia, wczytany z pliku (też: incydencja, lista)
+
+python -m zestaw_4.zadanie_2 7 0.3
+    -> losowy digraf i jego silnie spójne składowe (Kosaraju); informacja, czy jest silnie spójny
+
+python -m zestaw_4.zadanie_2 10 0.1
+    -> mały p: zwykle kilka składowych, digraf nie jest silnie spójny
+
+python -m zestaw_4.zadanie_3 7 0.4
+    -> silnie spójny digraf z wagami i najkrótsze ścieżki Bellmana-Forda od wierzchołka 1
+
+python -m zestaw_4.zadanie_3 7 0.4 3
+    -> to samo, ale wierzchołek startowy s = 3
+
+python -m zestaw_4.zadanie_4 7 0.4
+    -> silnie spójny digraf z wagami i macierz odległości między wszystkimi parami (Johnson)
+
+python -m zestaw_4.wszystko 7 0.4
+    -> wszystkie zadania na jednym digrafie: lista sąsiedztwa, składowe, wagi,
+       Bellman-Ford od 1, macierz odległości (Johnson) i rysunek z wagami
+
+python -m zestaw_4.wszystko 7 0.4 3
+    -> to samo, ale Bellman-Ford od wierzchołka 3
