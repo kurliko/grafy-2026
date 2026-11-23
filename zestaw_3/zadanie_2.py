@@ -1,5 +1,6 @@
 import sys
-from zestaw_3.graf_wazony import INF, print_weighted_graph, read_random_weighted_graph
+from zestaw_3.graf_wazony import INF, print_weighted_graph, read_random_weighted_graph, draw_weighted_graph
+import matplotlib.pyplot as plt
 
 # algorytm 1: wartości początkowe
 def init(g, s):
@@ -53,9 +54,6 @@ def print_shortest_paths(g, w, s):
         print(f"d({v + 1:>{width}}) = {ds[v]:>3} ==> [{path}]")
 
 
-
-
-
 # np. python -m zestaw_3.zadanie_2 12 19 [s]
 def main():
     g, w = read_random_weighted_graph(extra=1)
@@ -69,8 +67,10 @@ def main():
             sys.exit(f"s musi być od 1 do {len(g.adjacency_list)}.")
     print("Graf (sąsiad(waga)):")
     print_weighted_graph(g, w)
+    draw_weighted_graph(g, w)
     print()
     print_shortest_paths(g, w, s)
+    plt.show()
 
 
 if __name__ == "__main__":
