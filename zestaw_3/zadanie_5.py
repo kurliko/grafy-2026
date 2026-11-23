@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from zestaw_3.graf_wazony import INF, draw_weighted_graph, read_random_weighted_graph
+from zestaw_3.graf_wazony import INF, draw_weighted_graph, read_random_weighted_graph, print_weighted_graph
 
 
 # algorytm Prima od wierzchołka 0; zwraca listę krawędzi drzewa (u, v, waga)
@@ -37,6 +37,7 @@ def print_tree(tree):
 def main():
     g, w = read_random_weighted_graph()
     tree = prim(g, w)
+    print_weighted_graph(g, w)
     print_tree(tree)
     draw_weighted_graph(g, w, tree)
     plt.show()

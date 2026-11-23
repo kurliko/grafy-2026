@@ -1,7 +1,6 @@
-from zestaw_3.graf_wazony import read_random_weighted_graph
-from zestaw_3.zadanie_3 import distance_matrix
-from zestaw_3.graf_wazony import print_weighted_graph, read_random_weighted_graph
+from zestaw_3.graf_wazony import print_weighted_graph, read_random_weighted_graph, draw_weighted_graph
 from zestaw_3.zadanie_3 import distance_matrix, print_matrix
+import matplotlib.pyplot as plt
 
 # centrum: najmniejsza suma odległości; minimax: najmniejsza odległość do najdalszego
 # przy remisie wybieramy wierzchołek o najmniejszym numerze
@@ -27,11 +26,13 @@ def main():
     g, w = read_random_weighted_graph()
     print("Graf (sąsiad(waga)):")
     print_weighted_graph(g, w)
+    draw_weighted_graph(g,w)
     d = distance_matrix(g, w)
     print("\nMacierz odległości:")
     print_matrix(d)
     print()
     print_centers(d)
+    plt.show()
 
 
 if __name__ == "__main__":
