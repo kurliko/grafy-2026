@@ -8,7 +8,8 @@ from zestaw_1.zadanie_2 import circle_positions
 
 
 class Digraph:
-    """Graf skierowany o wierzchołkach 0..n-1; adjacency_list[u] = wierzchołki, do których prowadzi łuk z u."""
+    """Graf skierowany o wierzchołkach 0..n-1;
+    adjacency_list[u] = wierzchołki, do których prowadzi łuk z u."""
 
     def __init__(self, adjacency_list):
         self.adjacency_list = adjacency_list

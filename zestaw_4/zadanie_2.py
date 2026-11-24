@@ -1,6 +1,6 @@
 import sys
-
-from zestaw_4.digraph import Digraph, print_adjacency_list, read_random_digraph
+import matplotlib.pyplot as plt
+from zestaw_4.digraph import Digraph, print_adjacency_list, read_random_digraph, draw_digraph
 
 
 # transpozycja: łuki mają odwrócone zwroty
@@ -86,10 +86,12 @@ def print_components(comp):
 # np. python -m zestaw_4.zadanie_2 7 0.3
 def main():
     g = read_random_digraph()
+    draw_digraph(g)
     print("Lista sąsiedztwa:")
     print_adjacency_list(g)
     print()
     print_components(kosaraju(g))
+    plt.show()
 
 
 if __name__ == "__main__":

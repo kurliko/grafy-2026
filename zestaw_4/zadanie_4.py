@@ -1,7 +1,8 @@
 import sys
 
+import matplotlib.pyplot as plt
 from zestaw_3.zadanie_2 import INF, dijkstra
-from zestaw_4.digraph import print_weighted_adjacency_list
+from zestaw_4.digraph import print_weighted_adjacency_list, draw_digraph
 from zestaw_4.zadanie_3 import (add_s, bellman_ford, random_strongly_connected_digraph,
                                 random_weights)
 
@@ -53,9 +54,10 @@ def main():
 
     print("Lista sąsiedztwa z wagami (v(waga)):")
     print_weighted_adjacency_list(g, w)
+    draw_digraph(g, w)
     print("\nMacierz odległości:")
     print_matrix(johnson(g, w))
-
+    plt.show()
 
 if __name__ == "__main__":
     main()

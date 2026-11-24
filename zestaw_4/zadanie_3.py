@@ -1,9 +1,11 @@
 import random
 import sys
 
+import matplotlib.pyplot as plt
+
 from zestaw_3.zadanie_2 import INF, init, path_to, relax
-from zestaw_4.digraph import (Digraph, print_weighted_adjacency_list, random_digraph,
-                              read_start)
+from zestaw_4.digraph import (Digraph, draw_digraph, print_weighted_adjacency_list,
+                              random_digraph, read_start)
 from zestaw_4.zadanie_2 import is_strongly_connected
 
 
@@ -99,6 +101,9 @@ def main():
     print()
     ds, ps, ok = bellman_ford(g, w, s)
     print_paths(ds, ps, s)
+
+    draw_digraph(g, w)
+    plt.show()
 
 
 if __name__ == "__main__":
